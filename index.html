@@ -3,81 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Информирование пациентов</title>
+    <title>Информирование пациентов 2025</title>
     <style>
-        /* Стиль в духе Apple: системные шрифты и минимализм */
+        /* Основные настройки стиля Apple */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: #ffffff;
             color: #1d1d1f;
             margin: 0;
-            padding: 0;
+            padding: 40px 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
-            min-height: 100vh;
         }
 
         .container {
-            max-width: 600px;
-            width: 90%;
-            padding: 40px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
         }
 
         h1 {
-            font-size: 40px;
-            font-weight: 600;
+            font-size: 34px;
+            font-weight: 700;
             letter-spacing: -0.5px;
-            margin-bottom: 50px;
+            margin-bottom: 60px;
+            padding: 0 20px;
         }
 
         .section {
-            margin-bottom: 60px;
-            transition: opacity 0.3s ease;
+            position: relative;
+            margin-bottom: 70px;
+            padding: 0 20px;
         }
 
-        .qr-placeholder {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 15px;
-            background: #f5f5f7;
-            border-radius: 22px; /* Фирменное скругление Apple */
+        /* Крупные номера */
+        .number {
+            font-size: 80px;
+            font-weight: 200; /* Тонкое начертание для эстетики */
+            color: #f5f5f7; /* Очень светлый фон */
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
+            user-select: none;
+        }
+
+        .qr-container {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto 20px;
+            background: #ffffff;
+            border: 1px solid #d2d2d7; /* Тонкая рамка */
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); /* Легкая тень */
         }
 
-        .qr-placeholder img {
-            width: 85%;
-            height: 85%;
+        .qr-container img {
+            width: 80%;
+            height: 80%;
             object-fit: contain;
         }
 
         .label {
-            font-size: 17px;
-            font-weight: 400;
-            color: #86868b;
-            line-height: 1.4;
-            max-width: 300px;
-            margin: 0 auto;
+            font-size: 20px;
+            font-weight: 500;
+            color: #1d1d1f;
+            line-height: 1.3;
+            margin-top: 15px;
         }
 
         .footer {
-            margin-top: 80px;
-            font-size: 14px;
-            color: #b6b6b8;
-            font-weight: 500;
-            letter-spacing: 1px;
+            margin-top: 40px;
+            font-size: 16px;
+            color: #86868b;
+            font-weight: 400;
         }
 
-        /* Разделитель */
-        .divider {
-            height: 1px;
-            background-color: #d2d2d7;
-            width: 100px;
-            margin: 40px auto;
+        /* Оптимизация для печати */
+        @media print {
+            body { padding: 0; }
+            .qr-container { box-shadow: none; border: 1px solid #eee; }
+            .number { color: #ebeced !important; }
         }
     </style>
 </head>
@@ -87,24 +98,27 @@
         <h1>Информирование пациентов</h1>
 
         <div class="section">
-            <div class="qr-placeholder">
-                <img src="Image 10.png" alt="QR-код: Информация об очагах">
+            <div class="number">1</div>
+            <div class="qr-container">
+                <img src="Image 10.png" alt="QR-код 1">
             </div>
-            <p class="label">Информация об очагах туберкулеза</p>
+            <div class="label">Информация об очагах<br>туберкулеза</div>
         </div>
 
         <div class="section">
-            <div class="qr-placeholder">
-                <img src="Image 11.png" alt="QR-код: Хирургическое лечение">
+            <div class="number">2</div>
+            <div class="qr-container">
+                <img src="Image 11.png" alt="QR-код 2">
             </div>
-            <p class="label">О хирургическом лечении</p>
+            <div class="label">О хирургическом<br>лечении</div>
         </div>
 
         <div class="section">
-            <div class="qr-placeholder">
-                <img src="Image 12.png" alt="QR-код: Профосмотры">
+            <div class="number">3</div>
+            <div class="qr-container">
+                <img src="Image 12.png" alt="QR-код 3">
             </div>
-            <p class="label">О профосмотрах на туберкулез</p>
+            <div class="label">О профосмотрах<br>на туберкулез</div>
         </div>
 
         <div class="footer">
