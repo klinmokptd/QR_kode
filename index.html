@@ -18,7 +18,7 @@
 
         .container {
             width: 100%;
-            max-width: 800px; /* Увеличил ширину, чтобы всё влезло в ряд без наслоения */
+            max-width: 650px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -27,31 +27,39 @@
         h1 {
             font-size: 32px;
             font-weight: 700;
+            letter-spacing: -1px;
             margin-bottom: 60px;
             text-align: center;
         }
 
         .section {
             margin-bottom: 80px;
-            width: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
         }
 
         .qr-row {
             display: flex;
-            align-items: center; /* Центровка цифры и кода по вертикали */
-            gap: 30px; /* Фиксированный зазор, чтобы ничего не перекрывалось */
+            align-items: center;
+            justify-content: center;
+            position: relative;
         }
 
         .step-number {
-            /* Высота шрифта подогнана под высоту блока QR (220px) */
+            /* Огромный размер */
             font-size: 220px; 
             font-weight: 800;
             color: #0071e3;
-            opacity: 0.15; /* Полупрозрачность */
-            line-height: 0.8; /* Убираем лишние отступы сверху/снизу текста */
+            /* Полупрозрачные */
+            opacity: 0.15; 
+            line-height: 1;
+            margin-right: 40px;
             user-select: none;
+            
+            /* Сдвиг вверх на 30% от высоты (примерно 70px) */
+            transform: translateY(-70px); 
         }
 
         .qr-column {
@@ -64,7 +72,7 @@
             width: 220px;
             height: 220px;
             background: #ffffff;
-            border-radius: 28px;
+            border-radius: 32px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,7 +92,7 @@
             line-height: 1.3;
             color: #1d1d1f;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
             max-width: 280px;
         }
 
@@ -97,6 +105,7 @@
         @media print {
             body { padding: 0; }
             .section { page-break-inside: avoid; }
+            .qr-card { box-shadow: none; border: 1px solid #eeeeee; }
             .step-number { opacity: 0.1; }
         }
     </style>
@@ -142,7 +151,9 @@
             </div>
         </div>
 
-        <div class="footer">2025</div>
+        <div class="footer">
+            2025
+        </div>
     </div>
 
 </body>
