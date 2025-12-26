@@ -10,82 +10,97 @@
             background-color: #ffffff;
             color: #1d1d1f;
             margin: 0;
-            padding: 30px 0;
+            padding: 40px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .container {
-            max-width: 550px;
-            width: 95%;
+            width: 100%;
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Центрирует всё содержимое контейнера */
         }
 
         h1 {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 700;
-            letter-spacing: -0.8px;
-            margin-bottom: 40px;
+            letter-spacing: -1px;
+            margin-bottom: 50px;
             text-align: center;
+            width: 100%; /* Гарантирует центровку заголовка */
         }
 
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             display: flex;
-            flex-direction: row; /* Расположение в строку: цифра слева, контент справа */
-            align-items: center; /* Центрирование цифры по вертикали относительно QR-кода */
+            flex-direction: column;
+            align-items: center;
+            position: relative; /* Для позиционирования цифры */
+            width: 100%;
+        }
+
+        /* Контейнер для цифры и QR-карты */
+        .qr-row {
+            display: flex;
+            align-items: center; /* Центровка цифры по высоте ТОЛЬКО qr-card */
             justify-content: center;
+            position: relative;
         }
 
         .step-number {
-            font-size: 90px; /* Крупная цифра */
+            font-size: 100px;
             font-weight: 700;
             color: #0071e3;
-            margin-right: 40px; /* Отступ от кода */
             line-height: 1;
-            min-width: 70px;
-            text-align: center;
-        }
-
-        .qr-content-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center; /* Центрирование подписи относительно QR-кода */
+            /* Выносим цифру влево от QR-кода */
+            margin-right: 40px; 
         }
 
         .qr-card {
-            width: 210px;
-            height: 210px;
+            width: 220px;
+            height: 220px;
             background: #ffffff;
-            border-radius: 24px;
+            border-radius: 28px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
-            margin-bottom: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
             border: 1px solid #f2f2f7;
         }
 
         .qr-card img {
-            width: 85%;
-            height: 85%;
+            width: 88%;
+            height: 88%;
             object-fit: contain;
         }
 
         .label {
-            font-size: 18px;
-            font-weight: 500;
-            line-height: 1.2;
+            font-size: 19px;
+            font-weight: 600;
+            line-height: 1.3;
             color: #1d1d1f;
-            text-align: center; /* Подпись по центру */
-            max-width: 210px;
+            text-align: center;
+            margin-top: 15px;
+            max-width: 280px;
+            /* Смещение текста, чтобы он был по центру QR-кода, 
+               учитывая, что слева стоит большая цифра */
+            margin-left: 0; 
+        }
+
+        /* Обертка для QR и подписи, чтобы подпись была строго под кодом */
+        .qr-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .footer {
             margin-top: 20px;
             font-size: 14px;
             color: #86868b;
-            text-align: center;
         }
 
         @media print {
@@ -101,32 +116,38 @@
         <h1>Информирование пациентов</h1>
 
         <div class="section">
-            <div class="step-number">1</div>
-            <div class="qr-content-block">
-                <div class="qr-card">
-                    <img src="Image10.png" alt="QR 1">
+            <div class="qr-row">
+                <div class="step-number">1</div>
+                <div class="qr-column">
+                    <div class="qr-card">
+                        <img src="Image10.png" alt="QR 1">
+                    </div>
+                    <div class="label">Информирование в очагах<br>туберкулеза</div>
                 </div>
-                <div class="label">Информирование в очагах<br>туберкулеза</div>
             </div>
         </div>
 
         <div class="section">
-            <div class="step-number">2</div>
-            <div class="qr-content-block">
-                <div class="qr-card">
-                    <img src="Image11.png" alt="QR 2">
+            <div class="qr-row">
+                <div class="step-number">2</div>
+                <div class="qr-column">
+                    <div class="qr-card">
+                        <img src="Image11.png" alt="QR 2">
+                    </div>
+                    <div class="label">О хирургическом<br>лечении</div>
                 </div>
-                <div class="label">О хирургическом<br>лечении</div>
             </div>
         </div>
 
         <div class="section">
-            <div class="step-number">3</div>
-            <div class="qr-content-block">
-                <div class="qr-card">
-                    <img src="Image12.png" alt="QR 3">
+            <div class="qr-row">
+                <div class="step-number">3</div>
+                <div class="qr-column">
+                    <div class="qr-card">
+                        <img src="Image12.png" alt="QR 3">
+                    </div>
+                    <div class="label">О профосмотрах<br>на туберкулез</div>
                 </div>
-                <div class="label">О профосмотрах<br>на туберкулез</div>
             </div>
         </div>
 
