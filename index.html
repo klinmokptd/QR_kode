@@ -10,7 +10,7 @@
             background-color: #ffffff;
             color: #1d1d1f;
             margin: 0;
-            padding: 60px 0;
+            padding: 20px 0; /* Уменьшен отступ сверху и снизу */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -23,68 +23,65 @@
         }
 
         h1 {
-            font-size: 34px;
+            font-size: 28px; /* Чуть меньше размер */
             font-weight: 700;
             letter-spacing: -0.8px;
-            margin-bottom: 60px;
+            margin-bottom: 30px; /* Уменьшен отступ под заголовком */
         }
 
         .section {
-            margin-bottom: 80px;
+            margin-bottom: 35px; /* Компактное расстояние между блоками */
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Крупный, четкий номер шага */
         .step-number {
-            font-size: 24px;
+            font-size: 20px;
             font-weight: 600;
-            color: #0071e3; /* Акцентный синий Apple */
-            margin-bottom: 12px;
+            color: #0071e3;
+            margin-bottom: 8px;
             display: block;
         }
 
         .qr-card {
-            width: 220px;
-            height: 220px;
+            width: 180px; /* Уменьшен размер карточки для экономии места */
+            height: 180px;
             background: #ffffff;
-            border-radius: 30px;
+            border-radius: 24px;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* Мягкая тень Apple */
-            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
             border: 1px solid #f2f2f7;
         }
 
         .qr-card img {
-            width: 80%;
-            height: 80%;
+            width: 85%;
+            height: 85%;
             object-fit: contain;
         }
 
         .label {
-            font-size: 20px;
+            font-size: 18px; /* Немного компактнее шрифт */
             font-weight: 500;
-            line-height: 1.3;
+            line-height: 1.2;
             color: #1d1d1f;
             padding: 0 10px;
         }
 
         .footer {
-            margin-top: 20px;
-            font-size: 17px;
+            margin-top: 10px;
+            font-size: 14px;
             color: #86868b;
         }
 
-        /* Тонкий разделитель между блоками */
-        .divider {
-            width: 40px;
-            height: 2px;
-            background: #d2d2d7;
-            margin: 40px 0;
-            border-radius: 1px;
+        /* Оптимизация специально для печати */
+        @media print {
+            body { padding: 0; }
+            .section { page-break-inside: avoid; }
+            .qr-card { box-shadow: none; border: 1px solid #eeeeee; }
         }
     </style>
 </head>
